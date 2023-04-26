@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DASHBOARD | ETCSOLO.MININGCRYPTO.LIVE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body uk-height-viewport>
+        <div uk-grid>
+            <div class="uk-width-expand top">
+                <div class="uk-container">
+                    <div class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="index.html" style="color:#19D63F">MININGCRYPTO.LIVE</a></li>
+                            </ul>
+                        </div>
+                        <div class="uk-navbar-right uk-visible@m">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="miners.html">Miners</a></li>
+                                <li><a href="blocks.html">Blocks</a></li>
+                                <li><a href="payments.html">Payments</a></li>
+                            </ul>
+                        </div>
+                         <div class="uk-navbar-right uk-hidden@m">
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-overlay"></a>
+                        </div>
+                       <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                <a href="index.html"><img class="uk-logo" src="img/etc.png" />
+                                <ul class="uk-nav uk-nav-default">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="miners.html">Miners</a></li>
+                                    <li><a href="blocks.html">Blocks</a></li>
+                                    <li><a href="payments.html">Payments</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-container uk-margin-large-top">
+          <div class="uk-card uk-card-body uk-card-default">
+            <h5 class="uk-card-title" style="color:#19D63F">Hey Miner, enter your ETC address here</h5>
+            <form class="uk-width-1-1">
+                <div class="uk-form-controls uk-text-center">
+                    <input class="uk-input uk-width-4-5@m uk-width-1-1@xl" type="text" id="walletAddress" />
+                    <button class="uk-button uk-button-default" style="color:#19D63F">Load Data</button>
+                </div>
+            </form>
+        </div></div>
+        <div class="uk-container uk-margin-large-top">
+            <h4 style="color:#19D63F">Your personal statistics</h4>
+            <div class="uk-child-width-1-4@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                            <h3 class="uk-card-title" style="color:#19D63F">Pending shares</h3>
+                            <i class="fas fa-stopwatch fa-pull-left fa-2x"></i>
+                            <p class="uk-text-right" id="pendingShares"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                            <h3 class="uk-card-title" style="color:#19D63F">Miner's Hash Rate</h3>
+                            <i class="fas fa-chart-line fa-pull-left fa-2x"></i>
+                            <p class="uk-text-right" id="minerHashRate"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                            <h3 class="uk-card-title" style="color:#19D63F">Pending balance</h3>
+                            <i class="fas fa-hand-holding-usd fa-pull-left fa-2x"></i>
+                            <p class="uk-text-right" id="pendingBalance"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                            <h3 class="uk-card-title" style="color:#19D63F">Paid balance</h3>
+                            <i class="fas fa-money-bill-wave-alt fa-pull-left fa-2x"></i>
+                            <p class="uk-text-right" id="paidBalance"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-container uk-margin-large-top">
+            <h4 style="color:#19D63F">Your workers</h4>
+            <div class="uk-overflow-auto">
+                <table class="uk-table uk-table-small uk-table-striped" style="color:white;" id="workerList"></table>
+            </div>
+        </div>
+        <br><br>
+            <div class="uk-container uk-text-center">
+                <p>
+                <a href="index.html" target="_blank" style="color:#19D63F">MININGCRYPTO.LIVE</a></p>
+            </div>
+        
+        <script src="js/miningcore-ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var renderCallback = $.Callbacks();
+                renderCallback.add(function () {
+                    var walletAddress = '#walletAddress';
+
+                    function render() {
+                        clearInterval();
+                        setInterval(function load() {
+                            loadDashboardData($(walletAddress).val());
+                            loadDashboardWorkerList($(walletAddress).val());
+                            return load;
+                        }(), 60000);
+                    }
+
+                    $(walletAddress).on('input', function () {
+                        // idea: only submit if the value is a valid wallet address
+                        //render();
+                    });
+
+                    $('button').on('click', function (event) {
+                        if ($(walletAddress).val().length > 0) {
+                            localStorage.setItem(currentPool + "-walletAddress", $(walletAddress).val());
+                            render();
+                        }
+                        event.preventDefault();
+                    });
+
+                    if (localStorage[currentPool + '-walletAddress']) {
+                        $(walletAddress).val(localStorage[currentPool + '-walletAddress']);
+                    }
+                });
+                loadPools(renderCallback);
+            });
+        </script>
+    </body>
+</html>

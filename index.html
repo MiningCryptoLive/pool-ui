@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MININGCRYPTO.LIVE Mining Pools</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <link rel="stylesheet" href="css/plugins.min.css">
+        <link rel="stylesheet" href="css/main.css" />
+       <link rel="stylesheet" href="/css/all.css">
+        <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/custom.css"</script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body uk-height-viewport>
+        <div uk-grid>
+            <div class="uk-width-expand top">
+                <div class="uk-container">
+                    <div class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="index.html">MININGCRYPTO.LIVE</a></li>
+                            </ul>
+                        </div>
+                        <div class="uk-navbar-right uk-visible@m">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="miners.html">Miners</a></li>
+                                <li><a href="blocks.html">Blocks</a></li>
+                                <li><a href="payments.html">Payments</a></li>
+	              <li><a href="connect.html">Connect</a></li>	
+                            </ul>
+                        </div>
+                         <div class="uk-navbar-right uk-hidden@m">
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-overlay"></a>
+                        </div>
+                        <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                <a href="index.html"><img class="uk-logo" src="img/logo2.png" />
+                                <ul class="uk-nav uk-nav-primary">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="miners.html">Miners</a></li>
+                                    <li><a href="blocks.html">Blocks</a></li>
+                                    <li><a href="payments.html">Payments</a></li>
+		<li><a href="connect.html">Connect</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-container uk-light uk-margin-large-top">
+          <div class="uk-card uk-card-body uk-card-title uk-text-center" style="color:#19D63F">
+                            WELCOME ETC SOLO MINER'S<br>
+                            MININGCRYPTO.LIVE <BR> HIGH PERFORMANCE SOLO MINING POOL<br>
+	<a href="https://discord.gg/8kUEQwaPhW"><i class="fab fa-discord fa-3x" style="color:#19D63F"></i> </a><br> Join Our Discord Channel</div>	
+                        </div>
+                    </div>	
+	
+        <div class="uk-container uk-margin-large-top">
+          <div class="uk-card uk-card-body uk-card-default">
+                            <h3 class="uk-text-center" style="color:#ffff00" id="poolHashRate"></h3>
+		<h5 class="uk-text-center" style="color:#19D63F">Pool Hash Rate</h5><br>
+		<a href="" class="uk-icon-hover uk-icon-github" style="color:#ffffff"></a>
+
+                        </div>
+                    </div>
+         <div class="uk-container uk-margin-large-top">
+            <center><h5 class="uk-text-center" style="color:#19D63F">Pool Statistics</h5></center><br />
+            <div class="uk-child-width-1-4@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+	          <p class="uk-text-center" style="color:#ffff00" id="poolMiners"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Miners Online</h5>
+                        </div>
+                    </div>
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                           <p class="uk-text-center" style="color:#ffff00" id="networkHashRate"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Network Hash Rate</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+	          <p class="uk-text-center" style="color:#ffff00" id="networkDifficulty"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Network Difficulty</h5>
+                        </div>
+                    </div>
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+	           <p class="uk-text-center" style="color:#ffff00" id="blockchainHeight"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Blockchain Height</h5>
+                        </div>
+                    </div> 
+                </div>
+	<div class="uk-container uk-margin-large-top">
+            <div class="uk-child-width-1-4@m" uk-grid>
+	 <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+	            <p class="uk-text-center" style="color:#ffff00" id="poolEffort"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Pool Luck</h5>
+                        </div>
+                    </div>   
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="poolBlocks"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Pool Blocks</h5>
+                            
+                        </div>
+                    </div> 
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="lastNetworkBlock"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Last Network Block</h5>
+                            
+                        </div>
+                    </div> 
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="lastPoolBlock"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Last Pool Block</h5>
+                            
+                        </div>
+                      </div>
+	</div>
+	<div class="uk-container uk-margin-large-top">
+            <div class="uk-child-width-1-4@m" uk-grid>
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="totalPaid"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Total Paid by Pool</h5> 
+                        </div>
+                      </div>
+	  <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="poolFeePercent"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Pool fee</h5>
+                            
+                        </div>
+                    </div>
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="info1"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Block Reward</h5>
+                            
+	<script>
+const getBtcData1 = async () => {
+   fetch('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD')
+  .then(response => response.json())
+  .then(data1 => {
+    console.log(data1);
+    document.getElementById("info1").innerHTML = '<b style="color:#ffff00;"> $' + 2.56 * data1.USD + '</b>'
+    
+  });
+}
+getBtcData1();
+tcount=setInterval(function(){
+  tcount++
+  if (tcount==10) {getBtcData1(); tcount=0}
+  document.getElementById("infotime1").innerHTML = 'Next update in ' + (900-tcount) + ' seconds'
+},1000);
+
+</script>
+                        </div>
+                    </div>
+	<div>
+                        <div class="uk-card uk-card-body uk-card-default">
+		<p class="uk-text-center" style="color:#ffff00" id="info2"></p>
+                            <h5 class="uk-text-center" style="color:#19D63F">Current Price</h5>
+                            
+	<script>
+const getBtcData2 = async () => {
+   fetch('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD')
+  .then(response => response.json())
+  .then(data2 => {
+    console.log(data2);
+    document.getElementById("info2").innerHTML = '<b style="color:#ffff00;"> $' + 1 * data2.USD + '</b>'
+    
+  });
+}
+getBtcData2();
+tcount=setInterval(function(){
+  tcount++
+  if (tcount==10) {getBtcData2(); tcount=0}
+  document.getElementById("infotime2").innerHTML = 'Next update in ' + (900-tcount) + ' seconds'
+},1000);
+
+</script>
+                        </div>
+                    </div>
+              </div>
+           </div><br>
+	<div class="uk-tile-primary" style="color:#19d63f"></div>
+      <div class="uk-container uk-margin-large-top">
+	<div class="uk-card uk-card-body uk-card-default">
+	<h5 class="uk-text-center" style="color:#19D63F">Pool Hashrate (24 hours)</h5>
+             <div id="chartStatsHashRate" class="ct-chart" "ct-green"></div>
+          </div>
+        </div>
+      <div class="uk-container uk-margin-large-top">
+	<div class="uk-card uk-card-body uk-card-default">
+	<h5 class="uk-text-center" style="color:#19D63F">Network Hashrate (24 hours)</h5>
+             <div id="chartStatsNetworkHashRate" class="ct-chart"></div>
+          </div>
+        </div>
+     <div class="uk-container uk-margin-large-top">
+	<div class="uk-card uk-card-body uk-card-default">
+	<h5 class="uk-text-center" style="color:#19D63F">Network Difficulty (24 hours)</h5>
+             <div id="chartStatsNetworkDifficulty" class="ct-chart"></div>
+          </div>
+        </div>
+      <div class="uk-container uk-margin-large-top">
+	<div class="uk-card uk-card-body uk-card-default">
+	<h5 class="uk-text-center" style="color:#19D63F">Miner's Online (24 hours)</h5>
+             <div id="chartStatsMiners" class="ct-chart"></div>
+          </div>
+        </div>
+
+
+<div class="uk-container uk-margin-large-top">
+            <center><h5 class="uk-text-center" style="color:#19D63F">How it Works?</h5></center><br>
+            <div class="uk-child-width-1-2@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                            <p class="uk-text-center" style="color:#19D63F">THIS IS A SOLO MINING POOL</p>
+                            <ul style="color:white;">
+		<li> Miners work independently to find a block.</li>
+		<li> Block finder, will receive the full block reward.</li>
+		<li> Pool fees are included in the miner payment. No extra costs.</li>
+		<li> Payments are made immediately after block matures.</li>
+		<li> Pool uses <a href="https://github.com/oliverw/miningcore">miningcore</a>, a top rated mining pool software.</li>
+		<li> Pool uses variable difficulty on all mining ports.</li><br>
+		<li><a href="https://discord.gg/8kUEQwaPhW" class="color--primary"><i class="fab fa-discord fa-2x"></i> Join our Discord Channel</a></li>
+		</ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-body uk-card-default">
+                            <p class="uk-text-center" style="color:#19D63F">POOL FEATURES</p>
+                            <ul style="color:white;">
+		<li> Miner stats with charts, shares, rewards and paid earnings.</li>
+		<li> Payout = Full block reward (2.56 ETC + Tx fee).
+		<li> Pool Fee is 1%</li>
+		<li> High performance servers using NVME drives and the latest Intel Procesors.</li>
+		<li> Ban Manager for miners that send spam/invalid shares.</li>
+		<li> Fully compatible with  <a href="https://miningrigrentals.com"><img class="uk-logo" src="img/mrr-logo-thinner2.png" target="_blank"/></a></li>
+		<li> Fully compatible with  <a href="https://nicehash.com"><img class="uk-logo" src="img/logo_big_dark.webp" target="_blank"/></a></li>
+		</ul>
+                        </div>
+                    </div>
+	</div>
+        <br><br>
+<br>
+            <div class="uk-container uk-text-center">
+                <p><a href="index.html" target="_blank" style="color:#19D63F">MININGCRYPTO.LIVE</a></p>
+            </div>
+      <br/>
+        <!--   Core JS Files   -->
+<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/bootstrap-checkbox-radio.js"></script>
+<script src="js/chartist.min.js"></script>
+<script src="js/bootstrap-notify.js"></script>
+<script src="js/miningcore-ui.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript">
+           $(document).ready(function () {
+        var renderCallback = $.Callbacks();
+        renderCallback.add(function () {
+            function render() {
+                setInterval(function load() {
+                    loadStatsData();
+                    return load;
+                }(), 60000);
+                setInterval(function load() {
+                    loadStatsChart();
+                    return load;
+                }(), 600000);
+            }
+
+            render();
+        });
+        loadPools(renderCallback);
+       loadConnectConfig();
+    });
+</script>
+</body>
+</html>

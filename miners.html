@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ExchangeCoin Mining Pool</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body uk-height-viewport>
+        <div uk-grid>
+            <div class="uk-width-expand top">
+                <div class="uk-container">
+                    <div class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="index.html">MININGCRYPTO.LIVE</a></li>
+                            </ul>
+                        </div>
+                        <div class="uk-navbar-right uk-visible@m">
+                            <ul class="uk-navbar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="miners.html">Miners</a></li>
+                                <li><a href="blocks.html">Blocks</a></li>
+                                <li><a href="payments.html">Payments</a></li>
+                            </ul>
+                        </div>
+                         <div class="uk-navbar-right uk-hidden@m">
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-overlay"></a>
+                        </div>
+                        <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                <a href="index.html"><img class="uk-logo" src="img/etc.png" />
+                                <ul class="uk-nav uk-nav-default">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="miners.html">Miners</a></li>
+                                    <li><a href="blocks.html">Blocks</a></li>
+                                    <li><a href="payments.html">Payments</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-container uk-margin-large-top">
+            <h6>Best miners (top 20 contributors)</h6>
+            <div class="uk-overflow-auto">
+                <table class="uk-table uk-table-small uk-table-striped" style="color:white;" id="minerList"></table>
+            </div>
+        </div>
+        <div class="uk-position-bottom uk-position-fixed footer">
+            <div class="uk-container">
+                <p>
+                <a href="index.html" target="_blank">MININGCRYPTO.LIVE</a></p>
+            </div>
+        </div>
+        <script src="js/miningcore-ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var renderCallback = $.Callbacks();
+                renderCallback.add(function () {
+                    loadMinersList();
+                });
+                loadPools(renderCallback);
+            });
+        </script>
+    </body>
+</html>
