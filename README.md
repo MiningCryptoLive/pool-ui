@@ -8,3 +8,4 @@
 * Make sure to change values on [miningcore-ui.js](https://github.com/MiningCryptoLive/pool-ui/blob/master/js/miningcore-ui.js#L1)
 * Upload on the server which works with html,css and js. Basically you can use any nginx/apache server for that.
 * Just access the site.
+# edit the html pages to your liking.
