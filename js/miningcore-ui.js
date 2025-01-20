@@ -1,5 +1,5 @@
 // config
-var API = 'https://solopool.pro/api/'; // API address
+var API = 'https://zergpool.com/api/'; // API address
 var defaultPool = 'etcsolo'; // Default Pool ID
 
 var currentPool = defaultPool;
