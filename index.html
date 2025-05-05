@@ -59,7 +59,7 @@
         </div>
         <div class="uk-container uk-light uk-margin-large-top">
           <div class="uk-card uk-card-body uk-card-title uk-text-center" style="color:#19D63F">
-                            WELCOME ETC SOLO MINER'S<br>
+                            WELCOME SOLO MINER'S<br>
                          <BR> HIGH PERFORMANCE SOLO MINING POOL<br>
 	<a href="https://discord.gg/8kUEQwaPhW"><i class="fab fa-discord fa-3x" style="color:#19D63F"></i> </a><br> Join Our Discord Channel</div>	
                         </div>
@@ -149,11 +149,11 @@
                             
 	<script>
 const getBtcData1 = async () => {
-   fetch('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD')
+   fetch('https://min-api.cryptocompare.com/data/price?fsym=xmr&tsyms=USD')
   .then(response => response.json())
   .then(data1 => {
     console.log(data1);
-    document.getElementById("info1").innerHTML = '<b style="color:#ffff00;"> $' + 2.56 * data1.USD + '</b>'
+    document.getElementById("info1").innerHTML = '<b style="color:#ffff00;"> $' + 0.6 * data1.USD + '</b>'
     
   });
 }
@@ -174,7 +174,7 @@ tcount=setInterval(function(){
                             
 	<script>
 const getBtcData2 = async () => {
-   fetch('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD')
+   fetch('https://min-api.cryptocompare.com/data/price?fsym=xmr&tsyms=USD')
   .then(response => response.json())
   .then(data2 => {
     console.log(data2);
@@ -243,7 +243,7 @@ tcount=setInterval(function(){
                             <p class="uk-text-center" style="color:#19D63F">POOL FEATURES</p>
                             <ul style="color:white;">
 		<li> Miner stats with charts, shares, rewards and paid earnings.</li>
-		<li> Payout = Full block reward (2.56 ETC + Tx fee).
+		<li> Payout = Full block reward (0.6 XMR + Tx fee).
 		<li> Pool Fee is 1%</li>
 		<li> High performance servers using NVME drives and the latest Intel Procesors.</li>
 		<li> Ban Manager for miners that send spam/invalid shares.</li>
