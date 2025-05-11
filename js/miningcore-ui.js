@@ -1,6 +1,6 @@
 // config
-var API = 'https://xmr.solopool.pro/api/'; // API address
-var defaultPool = 'monero'; // Default Pool ID
+var API = 'https://solopool.pro/api/'; // API address
+var defaultPool = 'xmr1'; // Default Pool ID
 
 var currentPool = defaultPool;
 
